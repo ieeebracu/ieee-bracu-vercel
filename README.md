@@ -108,3 +108,25 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 * `npm run db:generate`: Generates Drizzle migrations
 * `npm run seed:webmaster`: Interactive script to generate webmaster seed SQL
 * `npm run reset:webmaster`: Interactive script to generate password reset SQL
+* `npm run backup`: Full automated backup of Cloudflare D1 database and R2 media to local directory
+
+---
+
+## Remote Backup Utility (D1 & R2)
+
+To download a full, point-in-time backup of both your remote Cloudflare D1 SQLite database and all Cloudflare R2 media files:
+
+```bash
+npm run backup
+```
+
+### Options:
+* `npm run backup -- --d1-only`: Download only the remote D1 SQL dump
+* `npm run backup -- --r2-only`: Download only the remote R2 media files
+* `npm run backup -- --output my-backup-dir`: Save to a specific custom folder
+
+All backups are stored in a timestamped folder under `backups/` (e.g., `backups/backup-2026-10-19_00-35-00/`), containing:
+* `d1-database.sql`: Full SQL dump of tables, schema, and all data
+* `r2-media/`: All uploaded images and media preserving folder structure
+* `backup-manifest.json`: Metadata report including file count, sizes, and timestamps
+
