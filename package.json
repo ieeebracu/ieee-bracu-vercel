@@ -35,6 +35,7 @@
     "auth:schema": "npx @better-auth/cli generate --config lib/auth/cli-config.ts --output db/schema/auth.ts",
     "db:generate": "drizzle-kit generate",
     "seed:webmaster": "tsx scripts/seed-webmaster.ts",
-    "reset:webmaster": "tsx scripts/reset-webmaster-password.ts"
+    "reset:webmaster": "tsx scripts/reset-webmaster-password.ts",
+    "backup": "tsx scripts/backup.ts"
   }
 }

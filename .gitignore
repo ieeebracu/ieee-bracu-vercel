@@ -38,3 +38,6 @@ yarn-error.log*
 seed-webmaster.sql
 reset-webmaster.sql
 temp/
+
+# local backups
+/backups/
