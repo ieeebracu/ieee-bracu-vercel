@@ -1,0 +1,14 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "ieeebracu.com" },
+      { protocol: "https", hostname: "*.r2.dev" },
+      { protocol: "https", hostname: "*.r2.cloudflarestorage.com" },
+    ],
+  },
+};
+
+export default nextConfig;
